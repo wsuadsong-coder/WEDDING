@@ -1,13 +1,20 @@
+สาเหตุที่ตัวหนังสือยังเป็นฟอนต์เดิม (ฟอนต์ลายมือ Charm) อยู่ เป็นเพราะในเว็บตัวอย่างขวาหรือใน GitHub ของคุณหนุ่มยังมีคลาส CSS เก่าที่ติดอยู่ครับ
+
+ผมได้ปรับแก้โค้ดใหม่ทั้งหมดโดย **บังคับให้ใช้ฟอนต์ Sarabun เป็นหลักเต็มรูปแบบ** และล้างคลาสฟอนต์เดิมออกให้หมดจดแล้วครับ ตัวหนังสือจะตรงตามการ์ดจริง เรียบร้อย เป็นทางการ และอ่านง่ายแน่นอนครับ
+
+คุณหนุ่มสามารถก๊อปปี้โค้ดชุดใหม่ด้านล่างนี้ ไปวางอัปเดตทับไฟล์ `index.html` บน GitHub ของคุณได้เลยครับ!
+
+```html
 <!DOCTYPE html>
 <html lang="th" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Wedding - Apinya & Prachayachayawit (หยก & บีท)</title>
-    <!-- Google Fonts: Sarabun (ฟอนต์การ์ดแต่งงาน/ราชการ ทางการ อ่านง่าย), Charm, Alex Brush, Cormorant Garamond -->
+    <!-- Google Fonts: Sarabun, Alex Brush, Cormorant Garamond -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Charm:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Google Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <!-- Tailwind CSS -->
@@ -34,7 +41,6 @@
                     fontFamily: {
                         serif: ['"Cormorant Garamond"', 'serif'],
                         sans: ['"Sarabun"', 'sans-serif'],
-                        charm: ['"Charm"', 'cursive'],
                         script: ['"Alex Brush"', 'cursive'],
                     }
                 }
@@ -46,9 +52,6 @@
             font-family: 'Sarabun', sans-serif;
             background-color: #F8F5F2;
             color: #2C2A29;
-        }
-        .font-charm-custom {
-            font-family: 'Charm', cursive;
         }
         .font-script-custom {
             font-family: 'Alex Brush', cursive;
@@ -308,7 +311,7 @@
                 <!-- PromptPay QR Code Modal Button -->
                 <button onclick="openPromptPay()" class="flex-1 flex items-center justify-center gap-2 py-3 px-4 bg-roseGold-500 text-white rounded-xl text-xs font-medium hover:bg-roseGold-600 transition-all shadow-sm">
                     <span class="material-icons-outlined text-base">qr_code_2</span>
-                    สแกนช่วยงาน
+                    สแกนร่วมทำบุญ
                 </button>
             </div>
         </section>
@@ -320,7 +323,7 @@
                     <span class="material-icons-outlined">close</span>
                 </button>
                 <p class="text-xs uppercase tracking-widest text-roseGold-500 font-medium mb-1">PROMPTPAY QR CODE</p>
-                <h4 class="font-semibold text-sm text-neutralDark mb-4">ร่วมทำช่วยงาน / สแกนอวยพร</h4>
+                <h4 class="font-semibold text-sm text-neutralDark mb-4">ร่วมทำบุญ / สแกนอวยพร</h4>
                 
                 <!-- QR Code Placeholder/Generated Box -->
                 <div class="w-48 h-48 mx-auto bg-gray-50 border-2 border-roseGold-200 rounded-xl flex flex-col items-center justify-center p-2 mb-3">
@@ -417,3 +420,5 @@ END:VCALENDAR`;
     </script>
 </body>
 </html>
+
+```
