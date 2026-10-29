@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wedding - Apinya & Prachayachayawit (หยก & บีท)</title>
+    <!-- Google Fonts: Charm (ไทยอ่อนช้อย), Cormorant Garamond (หัวข้อหรู), Alex Brush (ลายมือภาษาอังกฤษ), Prompt (เนื้อหาอ่านง่าย) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Charm:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Prompt:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        roseGold: {
+                            50: '#FAF4F3',
+                            100: '#F5E8E6',
+                            200: '#E8CECA',
+                            300: '#D7A8A2',
+                            400: '#C5847B',
+                            500: '#B26259',
+                            600: '#954941',
+                        },
+                        accentGold: '#C5A059',
+                        dustyPink: '#E8B4B8',
+                        softPeach: '#FAD0C4',
+                        neutralDark: '#2C2A29',
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Prompt"', 'sans-serif'],
+                        charm: ['"Charm"', 'cursive'],
+                        script: ['"Alex Brush"', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: #F8F5F2;
+            color: #2C2A29;
+        }
+        .font-charm-custom {
+            font-family: 'Charm', cursive;
+        }
+        .font-script-custom {
+            font-family: 'Alex Brush', cursive;
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D7A8A2;
+            border-radius: 4px;
+        }
+        .gold-border {
+            border: 1px solid rgba(197, 160, 89, 0.3);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-roseGold-300 selection:text-white flex flex-col items-center justify-center min-h-screen">
+
+    <!-- Mobile Wrapper Constraints (Max Width 480px) -->
+    <div class="w-full max-w-[480px] bg-white min-h-screen shadow-2xl relative pb-20 overflow-x-hidden border-x border-roseGold-100">
+        
+        <!-- Audio Control Floating Toggle -->
+        <button id="musicToggle" onclick="toggleMusic()" class="fixed top-4 right-4 z-40 bg-white/80 backdrop-blur-md p-2.5 rounded-full shadow-lg border border-roseGold-200 text-roseGold-500 hover:bg-roseGold-500 hover:text-white transition-all duration-300">
+            <span class="material-icons-outlined text-xl block" id="musicIcon">music_note</span>
+        </button>
+
+        <!-- 1. HERO SECTION (Pre-wedding Beach Photo) -->
+        <section id="home-mobile-wedding" class="relative text-center bg-white overflow-hidden">
+            <div class="relative w-full aspect-[3/4] overflow-hidden">
+                <!-- Beach Pre-wedding photo -->
+                <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=1000" 
+                     alt="Apinya & Prachayachayawit Beach Prewedding" 
+                     class="w-full h-full object-cover object-center" />
+                <div class="absolute inset-0 bg-gradient-to-t from-neutralDark/80 via-transparent to-black/30"></div>
+                
+                <!-- Title Overlay -->
+                <div class="absolute top-6 left-0 right-0 text-white px-4">
+                    <p class="font-serif text-sm uppercase tracking-[0.35em] font-light text-roseGold-100">THE WEDDING</p>
+                    <p class="font-serif text-xs font-light tracking-[0.25em] text-white/90 mt-1">7 NOVEMBER 2026</p>
+                </div>
+
+                <!-- Names Overlay at Bottom -->
+                <div class="absolute bottom-6 left-0 right-0 text-white px-6">
+                    <p class="font-script-custom text-5xl sm:text-6xl text-roseGold-200 drop-shadow-lg mb-1 leading-tight">
+                        Apinya &amp; Prachayachayawit
+                    </p>
+                    <div class="flex justify-center items-center gap-2 mt-2">
+                        <span class="h-[1px] w-8 bg-roseGold-200/60"></span>
+                        <p class="font-charm-custom text-lg tracking-[0.2em] font-semibold text-roseGold-100">หยก &amp; บีท</p>
+                        <span class="h-[1px] w-8 bg-roseGold-200/60"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Host & Parents Greeting Banner -->
+            <div class="p-6 bg-roseGold-50/50 text-center border-b border-roseGold-100">
+                <div class="max-w-xs mx-auto text-xs leading-relaxed text-gray-700 space-y-2">
+                    <div class="grid grid-cols-2 gap-2 text-xs font-medium text-neutralDark border-b border-roseGold-200/50 pb-3">
+                        <div>
+                            <p class="text-roseGold-500 text-[11px] font-light">ฝ่ายหญิง</p>
+                            <p class="font-charm-custom text-base text-neutralDark">นายบุญมา ขันติวงศ์</p>
+                            <p class="font-charm-custom text-base text-neutralDark">นางประสาน ไทยสงคราม</p>
+                        </div>
+                        <div>
+                            <p class="text-roseGold-500 text-[11px] font-light">ฝ่ายชาย</p>
+                            <p class="font-charm-custom text-base text-neutralDark">ผอ.กำจัด แสนจันทร์</p>
+                            <p class="font-charm-custom text-base text-neutralDark">นางปาริชาติ แสนจันทร์</p>
+                        </div>
+                    </div>
+                    <p class="pt-2 text-gray-600 font-charm-custom text-base">
+                        ขอเรียนเชิญเพื่อเป็นเกียรติในงานมงคลสมรส ระหว่าง
+                    </p>
+                    <div class="py-2">
+                        <p class="font-charm-custom text-xl font-bold text-roseGold-600">นางสาวอภิญญา ขันติวงศ์ (หยก)</p>
+                        <span class="material-icons-outlined text-roseGold-400 text-sm my-1">all_inclusive</span>
+                        <p class="font-charm-custom text-xl font-bold text-roseGold-600">ส.ต.อ. ปราชญ์ชญวิทย์ แสนจันทร์ (บีท)</p>
+                    </div>
+                    <p class="font-serif text-sm text-roseGold-500 font-semibold tracking-wide pt-1">
+                        วันเสาร์ที่ 7 พฤศจิกายน พ.ศ. 2569
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. MORNING CEREMONY CARD (พิธีมงคลสมรส - พิธีเช้า) -->
+        <section id="morning-ceremony" class="py-10 px-5 bg-white">
+            <div class="text-center mb-6">
+                <span class="material-icons-outlined text-roseGold-400 text-3xl mb-1">wb_twilight</span>
+                <h3 class="font-charm-custom text-3xl text-neutralDark font-bold tracking-wide">พิธีมงคลสมรส (พิธีเช้า)</h3>
+                <p class="font-serif italic text-xs text-roseGold-500 font-light mt-0.5">Morning Wedding Ceremony</p>
+            </div>
+
+            <!-- Morning Card Box -->
+            <div class="bg-gradient-to-b from-white to-roseGold-50/30 rounded-2xl p-6 shadow-sm gold-border relative">
+                <!-- House Icon & Address -->
+                <div class="text-center pb-4 border-b border-roseGold-200/50">
+                    <span class="material-icons-outlined text-roseGold-500 text-2xl mb-1">home</span>
+                    <h4 class="font-charm-custom text-lg font-bold text-neutralDark">สถานที่จัดงานพิธีเช้า (บ้านงาน)</h4>
+                    <p class="text-xs text-gray-600 font-light mt-1 leading-relaxed px-2">
+                        บ้านเลขที่ 62 หมู่ 7 บ้านคำแดง<br />
+                        ตำบลเดิด อำเภอเมือง จังหวัดยโสธร
+                    </p>
+                </div>
+
+                <!-- Timeline Grid -->
+                <div class="py-5 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-16 text-center py-1 bg-roseGold-100 text-roseGold-600 rounded-lg text-xs font-semibold">
+                            08.39 น.
+                        </div>
+                        <div class="flex-1 text-xs text-gray-700">
+                            <span class="font-charm-custom text-base font-bold text-neutralDark block">พิธีแห่ขันหมาก</span>
+                            <span class="text-[11px] text-gray-500">Khan Mhak Procession</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="w-16 text-center py-1 bg-roseGold-100 text-roseGold-600 rounded-lg text-xs font-semibold">
+                            09.09 น.
+                        </div>
+                        <div class="flex-1 text-xs text-gray-700">
+                            <span class="font-charm-custom text-base font-bold text-neutralDark block">พิธีสู่ขวัญ ผูกข้อมือ</span>
+                            <span class="text-[11px] text-gray-500">Wrist-Tying Ceremony</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="w-16 text-center py-1 bg-roseGold-100 text-roseGold-600 rounded-lg text-xs font-semibold">
+                            09.49 น.
+                        </div>
+                        <div class="flex-1 text-xs text-gray-700">
+                            <span class="font-charm-custom text-base font-bold text-neutralDark block">พิธีรับไหว้</span>
+                            <span class="text-[11px] text-gray-500">Paying Respects Ceremony</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="w-16 text-center py-1 bg-roseGold-100 text-roseGold-600 rounded-lg text-xs font-semibold">
+                            11.00 น.
+                        </div>
+                        <div class="flex-1 text-xs text-gray-700">
+                            <span class="font-charm-custom text-base font-bold text-neutralDark block">เสร็จพิธีร่วมรับประทานอาหาร</span>
+                            <span class="text-[11px] text-gray-500">Luncheon Reception</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps Button Morning -->
+                <a href="https://maps.app.goo.gl/a7agSmYnN28kXUpA7" 
+                   target="_blank" 
+                   rel="noopener"
+                   class="flex items-center justify-center gap-2 w-full py-2.5 bg-roseGold-500 text-white font-medium rounded-xl text-xs hover:bg-roseGold-600 transition-all shadow-sm">
+                    <span class="material-icons-outlined text-sm">directions</span>
+                    แผนที่ Google Maps (บ้านงาน)
+                </a>
+            </div>
+        </section>
+
+        <!-- 3. EVENING RECEPTION CARD (พิธีฉลองมงคลสมรส - พิธีเย็น) -->
+        <section id="evening-ceremony" class="py-10 px-5 bg-roseGold-50/40">
+            <div class="text-center mb-6">
+                <span class="material-icons-outlined text-roseGold-400 text-3xl mb-1">nightlife</span>
+                <h3 class="font-charm-custom text-3xl text-neutralDark font-bold tracking-wide">พิธีฉลองมงคลสมรส (พิธีเย็น)</h3>
+                <p class="font-serif italic text-xs text-roseGold-500 font-light mt-0.5">Evening Wedding Celebration</p>
+            </div>
+
+            <!-- Evening Card Box -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm gold-border text-center">
+                <span class="material-icons-outlined text-roseGold-500 text-3xl mb-2">hotel</span>
+                <h4 class="font-charm-custom text-xl font-bold text-neutralDark">โรงแรมเดอะกรีนปาร์ค ยโสธร</h4>
+                <p class="font-charm-custom text-base text-roseGold-500 font-semibold mt-0.5">(ห้องมนต์นพเก้าแกรนด์)</p>
+                <p class="text-xs text-gray-500 font-light mt-2 leading-relaxed px-2">
+                    209/2 ถ.วาธีราราเดช ต.ในเมือง อ.เมือง จ.ยโสธร
+                </p>
+
+                <div class="my-6 py-4 border-y border-roseGold-200/60 inline-block w-full">
+                    <p class="font-charm-custom text-sm text-gray-500 mb-1">เวลาฉลองมงคลสมรส</p>
+                    <p class="text-3xl font-serif font-bold text-roseGold-600">18.30 น.</p>
+                </div>
+
+                <!-- Google Maps Button Evening -->
+                <a href="https://maps.google.com/?q=โรงแรมเดอะกรีนปาร์ค+ยโสธร" 
+                   target="_blank" 
+                   rel="noopener"
+                   class="flex items-center justify-center gap-2 w-full py-2.5 border-2 border-roseGold-500 text-roseGold-600 font-medium rounded-xl text-xs hover:bg-roseGold-500 hover:text-white transition-all">
+                    <span class="material-icons-outlined text-sm">location_on</span>
+                    แผนที่ Google Maps (โรงแรมเดอะกรีนปาร์ค)
+                </a>
+            </div>
+        </section>
+
+        <!-- 4. DRESS CODE SECTION -->
+        <section class="py-8 px-6 bg-white text-center border-t border-roseGold-100">
+            <p class="font-serif text-sm uppercase tracking-[0.25em] text-roseGold-500 font-semibold mb-3">Dress Code Palette</p>
+            <div class="flex justify-center items-center gap-3">
+                <div class="flex flex-col items-center">
+                    <div class="w-8 h-8 rounded-full bg-[#E8B4B8] shadow-sm"></div>
+                    <span class="font-charm-custom text-xs text-gray-600 mt-1">ชมพู</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-8 h-8 rounded-full bg-[#D7A8A2] shadow-sm"></div>
+                    <span class="font-charm-custom text-xs text-gray-600 mt-1">โรสโกลด์</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-8 h-8 rounded-full bg-[#FAD0C4] shadow-sm"></div>
+                    <span class="font-charm-custom text-xs text-gray-600 mt-1">พีช</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-8 h-8 rounded-full bg-[#F5E8E6] border border-roseGold-200 shadow-sm"></div>
+                    <span class="font-charm-custom text-xs text-gray-600 mt-1">โอลด์โรส/นู้ด</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. PREWEDDING BEACH GALLERY SECTION -->
+        <section id="gallery-mobile-wedding" class="py-10 px-4 bg-roseGold-50/20 text-center">
+            <div class="mb-6">
+                <span class="material-icons-outlined text-roseGold-400 text-3xl mb-1">collections</span>
+                <h3 class="font-serif text-3xl text-neutralDark tracking-wide">Beach Gallery</h3>
+                <p class="font-charm-custom text-base text-roseGold-500 font-light">ภาพพรีเวดดิ้งบรรยากาศชายหาด</p>
+            </div>
+
+            <!-- Grid Photo Gallery -->
+            <div class="grid grid-cols-2 gap-2 max-w-sm mx-auto">
+                <div class="overflow-hidden rounded-xl aspect-[3/4] cursor-pointer group shadow-sm" onclick="openLightbox('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=1000')">
+                    <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=600" alt="Prewedding 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div class="overflow-hidden rounded-xl aspect-[3/4] cursor-pointer group shadow-sm" onclick="openLightbox('https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&q=80&w=1000')">
+                    <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&q=80&w=600" alt="Prewedding 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div class="overflow-hidden rounded-xl aspect-[3/4] cursor-pointer group shadow-sm" onclick="openLightbox('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1000')">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600" alt="Prewedding 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div class="overflow-hidden rounded-xl aspect-[3/4] cursor-pointer group shadow-sm" onclick="openLightbox('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=1000')">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=600" alt="Prewedding 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox Modal -->
+        <div id="imageLightbox" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm" onclick="closeLightbox()">
+            <span class="material-icons-outlined absolute top-5 right-5 text-white text-3xl cursor-pointer">close</span>
+            <img id="lightboxImg" src="" alt="Enlarged prewedding photo" class="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl" />
+        </div>
+
+        <!-- 6. PROMPTPAY & CALENDAR ACTION SECTION -->
+        <section class="py-10 px-6 bg-white text-center space-y-4 border-t border-roseGold-100">
+            <h4 class="font-serif text-lg text-neutralDark">ร่วมอวยพร &amp; บันทึกวันงาน</h4>
+            
+            <div class="flex flex-col sm:flex-row gap-3 max-w-xs mx-auto">
+                <!-- Add to Calendar Button -->
+                <button onclick="downloadCalendar()" class="flex-1 flex items-center justify-center gap-2 py-3 px-4 bg-roseGold-50 text-roseGold-600 rounded-xl text-xs font-medium border border-roseGold-200 hover:bg-roseGold-100 transition-all">
+                    <span class="material-icons-outlined text-base">calendar_today</span>
+                    บันทึกปฏิทิน
+                </button>
+
+                <!-- PromptPay QR Code Modal Button -->
+                <button onclick="openPromptPay()" class="flex-1 flex items-center justify-center gap-2 py-3 px-4 bg-roseGold-500 text-white rounded-xl text-xs font-medium hover:bg-roseGold-600 transition-all shadow-sm">
+                    <span class="material-icons-outlined text-base">qr_code_2</span>
+                    สแกนร่วมทำบุญ
+                </button>
+            </div>
+        </section>
+
+        <!-- PromptPay Modal -->
+        <div id="promptpayModal" class="fixed inset-0 bg-black/70 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm" onclick="closePromptPay()">
+            <div class="bg-white rounded-2xl p-6 max-w-xs w-full text-center relative shadow-2xl" onclick="event.stopPropagation()">
+                <button onclick="closePromptPay()" class="absolute top-3 right-3 text-gray-400 hover:text-gray-600">
+                    <span class="material-icons-outlined">close</span>
+                </button>
+                <p class="text-xs uppercase tracking-widest text-roseGold-500 font-medium mb-1">PROMPTPAY QR CODE</p>
+                <h4 class="font-semibold text-sm text-neutralDark mb-4">ร่วมทำบุญ / สแกนอวยพร</h4>
+                
+                <!-- QR Code Placeholder/Generated Box -->
+                <div class="w-48 h-48 mx-auto bg-gray-50 border-2 border-roseGold-200 rounded-xl flex flex-col items-center justify-center p-2 mb-3">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=PROMPTPAY_WEDDING_A_P" alt="PromptPay QR Code" class="w-full h-full object-contain" />
+                </div>
+                <p class="text-xs text-gray-600 font-medium">นางสาวอภิญญา &amp; ส.ต.อ. ปราชญ์ชญวิทย์</p>
+                <p class="text-[11px] text-gray-400 mt-1">ขอขอบพระคุณทุกท่านมา ณ ที่นี้</p>
+            </div>
+        </div>
+
+        <!-- 8. FOOTER NOTE -->
+        <footer class="py-10 text-center bg-roseGold-50/50 border-t border-roseGold-100 text-xs text-gray-500 space-y-2">
+            <p class="font-charm-custom text-lg text-roseGold-600 font-bold">[ ขออภัยหากมิได้มาเรียนเชิญด้วยตนเอง ]</p>
+            <p class="font-charm-custom text-sm text-gray-500">ขอบพระคุณทุกท่านที่มาร่วมแสดงความยินดี</p>
+            <p class="text-[11px] uppercase tracking-widest text-roseGold-400 font-serif pt-2">Apinya &amp; Prachayachayawit</p>
+        </footer>
+
+        <!-- 5. FIXED BOTTOM NAVIGATION BAR -->
+        <nav class="nav-mobile-wedding fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] bg-white/95 backdrop-blur-md border-t border-roseGold-200 shadow-lg z-40 flex justify-around items-center py-2 px-1">
+            <a href="#home-mobile-wedding" class="flex flex-col items-center justify-center w-full text-gray-500 hover:text-roseGold-500 transition-colors py-1">
+                <span class="material-icons-outlined text-xl">home</span>
+                <span class="text-[10px] mt-0.5 font-light">หน้าแรก</span>
+            </a>
+            <a href="#morning-ceremony" class="flex flex-col items-center justify-center w-full text-gray-500 hover:text-roseGold-500 transition-colors py-1">
+                <span class="material-icons-outlined text-xl">wb_twilight</span>
+                <span class="text-[10px] mt-0.5 font-light">พิธีเช้า</span>
+            </a>
+            <a href="#evening-ceremony" class="flex flex-col items-center justify-center w-full text-gray-500 hover:text-roseGold-500 transition-colors py-1">
+                <span class="material-icons-outlined text-xl">nightlife</span>
+                <span class="text-[10px] mt-0.5 font-light">พิธีเย็น</span>
+            </a>
+            <a href="#gallery-mobile-wedding" class="flex flex-col items-center justify-center w-full text-gray-500 hover:text-roseGold-500 transition-colors py-1">
+                <span class="material-icons-outlined text-xl">collections</span>
+                <span class="text-[10px] mt-0.5 font-light">แกลเลอรี</span>
+            </a>
+        </nav>
+
+    </div>
+
+    <!-- JavaScript Actions -->
+    <script>
+        // Lightbox Functions
+        function openLightbox(src) {
+            const lightbox = document.getElementById('imageLightbox');
+            const img = document.getElementById('lightboxImg');
+            img.src = src;
+            lightbox.classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('imageLightbox').classList.add('hidden');
+        }
+
+        // PromptPay Modal Functions
+        function openPromptPay() {
+            document.getElementById('promptpayModal').classList.remove('hidden');
+        }
+
+        function closePromptPay() {
+            document.getElementById('promptpayModal').classList.add('hidden');
+        }
+
+        // Calendar Download (.ics)
+        function downloadCalendar() {
+            const icsData = 
+`BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wedding Invitation//Apinya and Prachayachayawit//TH
+BEGIN:VEVENT
+SUMMARY:งานมงคลสมรส หยก (อภิญญา) & บีท (ปราชญ์ชญวิทย์)
+DESCRIPTION:ขอเรียนเชิญร่วมงานมงคลสมรส พิธีเช้า ณ บ้านคำแดง ต.เดิด / พิธีฉลองมงคลสมรส เวลา 18.30 น. ณ โรงแรมเดอะกรีนปาร์ค ยโสธร
+LOCATION:โรงแรมเดอะกรีนปาร์ค ยโสธร
+DTSTART:20261107T013900Z
+DTEND:20261107T150000Z
+END:VEVENT
+END:VCALENDAR`;
+
+            const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.setAttribute('download', 'Wedding_Yok_Beat_2026.ics');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Audio Toggle
+        let isPlaying = false;
+        function toggleMusic() {
+            const musicIcon = document.getElementById('musicIcon');
+            isPlaying = !isPlaying;
+            musicIcon.innerText = isPlaying ? 'music_off' : 'music_note';
+        }
+    </script>
+</body>
+</html>
